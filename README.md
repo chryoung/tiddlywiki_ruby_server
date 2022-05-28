@@ -31,7 +31,6 @@ Usage server.rb [options]
     -b, --bind=ADDRESS               Bind to the address. [Default: 127.0.0.1]
     -p, --port=PORT                  Bind to the port. [Default: 5000]
     -u, --backup=BACKUP              Backup folder. [Default: bak]
-    -r, --root=ROOT                  The root of the tiddlywiki server. [Default: .]
     -m, --max-backup=MAX_BACKUP      The max number of backup files. [Default: 5]
 ```
 

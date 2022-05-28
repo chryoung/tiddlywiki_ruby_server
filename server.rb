@@ -10,7 +10,6 @@ require 'optparse'
 options = {
   address: "127.0.0.1",
   port: 5000,
-  root: ".",
   wiki_file: "index.html",
   backup: "bak",
   max_backup: 5,
@@ -34,10 +33,6 @@ OptionParser.new do |opts|
 
   opts.on("-uBACKUP", "--backup=BACKUP", "Backup folder. [Default: #{options[:backup]}]") do |bak|
     options[:backup] = bak
-  end
-
-  opts.on("-rROOT", "--root=ROOT", "The root of the tiddlywiki server. [Default: #{options[:root]}]") do |r|
-    options[:root] = r
   end
 
   opts.on("-mMAX_BACKUP", "--max-backup=MAX_BACKUP", "The max number of backup files. [Default: #{options[:max_backup]}]") do |m|
@@ -81,7 +76,7 @@ module WEBrick
    end
 end
 
-server = WEBrick::HTTPServer.new Port: options[:port], DocumentRoot: options[:root], BindAddress: options[:address]
+server = WEBrick::HTTPServer.new Port: options[:port], DocumentRoot: ".", BindAddress: options[:address]
 
 trap "INT" do
    puts "Shutting down..."
