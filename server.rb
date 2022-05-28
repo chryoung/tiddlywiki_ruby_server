@@ -36,10 +36,6 @@ OptionParser.new do |opts|
     options[:backup] = bak
   end
 
-  opts.on("-fWIKI_FILE", "--file=WIKI_FILE", "The tiddlywiki file to serve and save. [Default: #{options[:wiki_file]}]") do |f|
-    options[:wiki_file] = f
-  end
-
   opts.on("-rROOT", "--root=ROOT", "The root of the tiddlywiki server. [Default: #{options[:root]}]") do |r|
     options[:root] = r
   end
