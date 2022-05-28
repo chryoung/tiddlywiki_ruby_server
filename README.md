@@ -17,7 +17,7 @@ docker build -t tiddlyserver:v1.0.0 .
 mkdir -p ./tiddlywiki/bak
 # cp your tiddlywiki.html to tiddlywiki/index.html
 docker run -d \
-    -p 8080:80 \
+    -p 8080:5000 \
     -e MAX_BACKUP=5 \
     -v ./tiddlywiki:/data \
     tiddlyserver:v1.0.0

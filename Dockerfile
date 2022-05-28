@@ -8,4 +8,4 @@ VOLUME "/data"
 WORKDIR /data
 ENV MAX_BACKUP=5
 CMD ["/usr/local/bin/ruby", "/app/server.rb", "-b", "0.0.0.0", "-m", "$MAX_BACKUP"]
-EXPOSE 80
+EXPOSE 5000
